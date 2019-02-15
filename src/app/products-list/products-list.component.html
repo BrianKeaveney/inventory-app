@@ -1,0 +1,12 @@
+<!-- The line [class.selected]="isSelected(myProduct)" is a fun one: Angular allows us to set classes
+conditionally on an element using this syntax. This syntax says “add the CSS class selected if
+isSelected(myProduct) returns true.” This is a really handy way for us to mark the currently
+selected product -->
+<div class="ui items">
+  <app-product-row
+    *ngFor="let myProduct of productList"
+    [product]="myProduct"
+    (click)='clicked(myProduct)'
+    [class.selected]="isSelected(myProduct)">
+  </app-product-row>
+</div>
